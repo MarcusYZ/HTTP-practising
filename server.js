@@ -17,18 +17,17 @@ http.createServer(function (request,response){
   if (request.url === '/script.js'){
 
     console.log(request.headers)
-    const etag = request.headers('if-none-match')
+    const etag = request.headers['if-none-match']
     if (etag === '777'){
-
-      response.writeHead(200, {
+      
+      response.writeHead(304, {
         'Content-Type': 'text/javascript',
         'Cache-Control': 'max-age=20000000,no-cache',
         'Last-Modified': '123',
         'Etag': '777'
       })
-      response.end('')
+      response.end('123')
     } 
-
     else {
        response.writeHead(200, {
          'Content-Type': 'text/javascript',
@@ -36,10 +35,9 @@ http.createServer(function (request,response){
          'Last-Modified': '123',
          'Etag': '777'
        })
-
+      response.end('console.log("script loaded twice")')
     }
-
-    response.end('console.log("script loaded twice")')
+   
   }
 }).listen(8888)
 
