@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Queue() {
+      this.enqueue = function (e) {
+        items.push(e);
+      };
+      this.dequeue = function () {
+        return items.shift()
+      };
+      this.front = function () {
+        return items[0];
+      };
+      this.isEmpty = function () {
+        return items.length == 0;
+      };
+      this.size = function () {
+        return items.length;
+      }
+      this.print = function () {
+        console.log(items.toString());
+      };
+    };
+    let items = [];
+
+    let Queue2 = (function(){
+      const items = new WeakMap();
+    })
+  </script>
+</body>
+
+</html>

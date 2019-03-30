@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    
+    var a = [1,2,3,4,5,6,7]
+    console.log(a.indexOf(1));
+    //返回索引为1的值
+    function find2(element,index,array){
+      return (element % 2 == 0)? true : false;
+    }
+    console.log(a.find(find2))
+    //返回第一个满足条件的值
+    console.log(a.findIndex(find2))
+    //返回第一个满足条件的值的索引
+    console.log(a.includes(5))
+    //如果数组a中存在5会返回true、
+    console.log(a.includes(5,6))
+    //include还可以传入一个参数，表示从该数字开始找起。
+    console.log(a.toString())
+    //如果想把一个数组输出成字符串就用toString 
+    console.log(a.join('-'))
+    //如果想用某些东西来分隔开数组里的内容并且输出成字符串就用join
+    let length =5;
+    let int16 = new Int16Array(length);
+    for (let i=0; i<length ;i++){
+      int16[i] = i+1;
+    }
+    console.log(int16)
+  </script>
+</body>
+
+</html>
